@@ -6,10 +6,10 @@
     <!-- Contenido-->
     <div
       class="apsolute transform-gpu w-[350px] h-[250px] md:w-[500px] md:h-[400px] flex flex-col items-center justify-center p-8 text-center z-20"
-      @mouseenter="!isTouchDevice ? (isHovered = true) : null"
-      @mouseleave="!isTouchDevice ? (isHovered = false) : null"
+      @mouseenter="isTouchDevice !== true ? (isHovered = true) : null"
+      @mouseleave="isTouchDevice !== true ? (isHovered = false) : null"
     >
-      <networks /> 
+      <networks />
       <hello-world />
     </div>
     <div class="absolute min-h-screen">
@@ -17,7 +17,9 @@
       <!-- Tarjeta con efectos avanzados -->
       <div
         class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[250px] md:w-[500px] md:h-[400px] rotate-6 transform-gpu bg-gradient-to-br from-blue-900/20 to-purple-900/20 rounded-2xl shadow-[0_0_60px_-15px_rgba(124,58,237,0.6)] border border-white/10 backdrop-blur-sm overflow-hidden transition-all duration-500 hover:rotate-3 hover:shadow-[0_0_80px_-10px_rgba(99,102,241,0.8)]"
-        :class="{'!rotate-3 shadow-[0_0_80px_-10px_rgba(99,102,241,0.8)]': isHovered}"
+        :class="{
+          '!rotate-3 shadow-[0_0_80px_-10px_rgba(99,102,241,0.8)]': isHovered,
+        }"
       >
         <!-- Efecto de luz interior -->
         <div
@@ -34,7 +36,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from "vue";
+import { ref, computed, watch } from "vue";
 import { useDeviceOrientation } from "@vueuse/core";
 import Networks from "@/components/Networks.vue";
 import HelloWorld from "@/components/Welcome.vue";
@@ -43,8 +45,20 @@ const isHovered = ref(false);
 const orientation = useDeviceOrientation();
 
 const isTouchDevice = computed(() => {
-  return 'ontouchstart' in window || navigator.maxTouchPoints > 0 || orientation.isSupported;
+  return (
+    "ontouchstart" in window ||
+    navigator.maxTouchPoints > 0 ||
+    orientation.isSupported
+  );
 });
+console.log(isTouchDevice.value, isHovered.value);
+
+watch(
+  () => isHovered.value,
+  () => {
+    console.log(isTouchDevice.value, isHovered.value);
+  }
+);
 </script>
 
 <style scoped>
