@@ -1,16 +1,18 @@
 <template>
-  <div ref="vantaRef" class="vanta-background"></div>
+  <div ref="vantaRef" class="vanta-background">
+  </div>
 </template>
 
 <script setup lang="ts">
 import { useThemeStore } from "@/stores/themeStore";
-import { ref, watch, onMounted, onUnmounted } from "vue";
-import * as THREE from "three";
-import BIRDS from "vanta/dist/vanta.birds.min";
+import { onMounted, onUnmounted, ref, watch } from 'vue'
+import * as THREE from 'three'
+import BIRDS from 'vanta/dist/vanta.birds.min'
 
 const themeStore = useThemeStore();
-const vantaRef = ref<HTMLElement>();
-let vantaEffect: any = null;
+const vantaRef = ref<HTMLDivElement | null>(null)
+let vantaEffect: any = null
+
 
 // Función para normalizar valores RGB (con o sin comas)
 const normalizeRGB = (rgbString: string, fallback: string = "0 0 0") => {
@@ -87,6 +89,5 @@ onUnmounted(() => {
   width: 100%;
   height: 100%;
   z-index: -1;
-  transition: all 1s ease-in-out;
 }
 </style>

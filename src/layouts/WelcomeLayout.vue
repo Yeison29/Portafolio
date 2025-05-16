@@ -1,6 +1,6 @@
 <template>
   <div id="welcome-layout">
-    <VantaBackground :is-dark-mode="themeStore.isDark" />
+    <VantaBackground />
     <nav
       class="fixed top-0 right-0 flex items-center justify-between p-4 gap-3"
     >
