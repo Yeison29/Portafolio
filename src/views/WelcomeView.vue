@@ -5,11 +5,11 @@
   >
     <!-- Contenido-->
     <div
-      class="apsolute transform-gpu w-[350px] h-[250px] flex flex-col items-center justify-center p-8 text-center z-20"
+      class="apsolute transform-gpu w-[350px] h-[250px] md:w-[500px] md:h-[400px] flex flex-col items-center justify-center p-8 text-center z-20"
       @mouseenter="isHovered = true"
       @mouseleave="isHovered = false"
     >
-      <networks />
+      <networks /> 
       <hello-world />
     </div>
     <div class="absolute min-h-screen">
