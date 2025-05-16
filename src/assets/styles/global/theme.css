@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+:root {
+  /* Sistema tipográfico */
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Espaciados base */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+
+  /* Radios de borde */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+}
+
+/* Tema claro */
+:root, .light {
+  --color-primary: 245 39 39;
+  --color-secondary: 200, 20, 236; 
+  --color-accent: 236 72 153; /* pink-500 */
+  --color-success: 16 185 129; /* emerald-500 */
+  --color-warning: 245 158 11; /* amber-500 */
+  --color-danger: 239 68 68; /* red-500 */
+  
+  --color-text: 0 0 0; /* gray-900 */
+  --color-text-muted: 75 85 99; /* gray-600 */
+  --color-bg: 255, 255, 255;
+  --color-bg-muted: 82 70 166;
+  --color-border: 68 33 134;
+  
+  --color-surface: 255 255 255;
+  --color-surface-elevated: 249 250 251;
+
+  /* Sombras */
+  --shadow-sm: 0 11px 12px 10px rgba(255, 255, 255, 0.5);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+/* Tema oscuro */
+.dark {
+  --color-primary: 144, 38, 243;
+  --color-secondary: 200, 20, 236; 
+  --color-accent: 244 114 182; /* pink-400 */
+  --color-success: 110 231 183; /* emerald-400 */
+  --color-warning: 252 211 77; /* amber-300 */
+  --color-danger: 248 113 113; /* red-400 */
+  
+  --color-text: 255 255 255;
+  --color-text-muted: 156 163 175; /* gray-400 */
+  --color-bg: 5, 29, 77;
+  --color-bg-muted: 82 70 166;
+  --color-border: 68 33 134;
+  
+  --color-surface: 31 41 55;
+  --color-surface-elevated: 17 24 39;
+
+  /* Sombras */
+  --shadow-sm: 0 1px 2px 0 rgba(255, 255, 255, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(255, 255, 255, 0.2), 0 2px 4px -2px rgba(255, 255, 255, 0.2);
+  --shadow-lg: 0 10px 15px -3px rgba(255, 255, 255, 0.3), 0 4px 6px -4px rgba(255, 255, 255, 0.3);
+}
+
+
+/* Tema personalizado para Tippy */
+.tippy-box[data-theme~='custom'] {
+  background-color: rgb(var(--color-primary));
+  color: white;
+  font-weight: 600;
+  box-shadow: var(--shadow-lg);
+}
+
+.tippy-box[data-theme~='custom'] .tippy-arrow {
+  color: rgb(var(--color-primary));
+}
+
+.tippy-box[data-theme~='custom'] .tippy-content {
+  padding: 5px 10px;
+}

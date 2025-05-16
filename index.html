@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <!-- Meta tag para prevenir FOUC -->
+    <meta
+      name="theme-color"
+      content="#000000"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + Vue + TS</title>
+
+    <!-- Script para leer el tema ANTES de que Vue cargue -->
+    <script>
+      const savedTheme =
+        localStorage.getItem("theme") ||
+        (window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light");
+      document.documentElement.classList.toggle("dark", savedTheme === "dark");
+    </script>
+    <!-- Estilos iniciales (opcional) -->
+    <style>
+      :root {
+        --color-bg: 255, 255, 255;
+      }
+      .dark {
+        --color-bg: 5, 29, 77;
+      }
+      body {
+        background-color: rgb(var(--color-bg));
+        transition: background-color 0.3s;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
