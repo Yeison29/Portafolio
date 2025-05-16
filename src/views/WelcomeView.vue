@@ -6,8 +6,8 @@
     <!-- Contenido-->
     <div
       class="apsolute transform-gpu w-[350px] h-[250px] md:w-[500px] md:h-[400px] flex flex-col items-center justify-center p-8 text-center z-20"
-      @mouseenter="isHovered = true"
-      @mouseleave="isHovered = false"
+      @mouseenter="!isTouchDevice ? (isHovered = true) : null"
+      @mouseleave="!isTouchDevice ? (isHovered = false) : null"
     >
       <networks /> 
       <hello-world />
@@ -34,11 +34,17 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, computed } from "vue";
+import { useDeviceOrientation } from "@vueuse/core";
 import Networks from "@/components/Networks.vue";
 import HelloWorld from "@/components/Welcome.vue";
 
 const isHovered = ref(false);
+const orientation = useDeviceOrientation();
+
+const isTouchDevice = computed(() => {
+  return 'ontouchstart' in window || navigator.maxTouchPoints > 0 || orientation.isSupported;
+});
 </script>
 
 <style scoped>
