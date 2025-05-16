@@ -26,7 +26,7 @@
 /* Tema claro */
 :root, .light {
   --color-primary: 245 39 39;
-  --color-secondary: 200, 20, 236; 
+  --color-secondary: 200 20 236; 
   --color-accent: 236 72 153; /* pink-500 */
   --color-success: 16 185 129; /* emerald-500 */
   --color-warning: 245 158 11; /* amber-500 */
@@ -49,8 +49,8 @@
 
 /* Tema oscuro */
 .dark {
-  --color-primary: 144, 38, 243;
-  --color-secondary: 200, 20, 236; 
+  --color-primary: 144 38 243;
+  --color-secondary: 200 20 236; 
   --color-accent: 244 114 182; /* pink-400 */
   --color-success: 110 231 183; /* emerald-400 */
   --color-warning: 252 211 77; /* amber-300 */
