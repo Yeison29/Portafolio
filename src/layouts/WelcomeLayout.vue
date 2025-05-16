@@ -1,5 +1,6 @@
 <template>
   <div id="welcome-layout">
+    <VantaBackground :is-dark-mode="themeStore.isDark" />
     <nav
       class="fixed top-0 right-0 flex items-center justify-between p-4 gap-3"
     >
@@ -45,6 +46,7 @@
 <script setup lang="ts">
 import { useThemeStore } from "@/stores/themeStore";
 import { useLocaleStore } from "@/stores/localeStore";
+import VantaBackground from "@/components/VantaBackground.vue";
 
 const themeStore = useThemeStore();
 const localeStore = useLocaleStore();

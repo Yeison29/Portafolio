@@ -32,10 +32,10 @@
   --color-warning: 245 158 11; /* amber-500 */
   --color-danger: 239 68 68; /* red-500 */
   
-  --color-text: 0 0 0; /* gray-900 */
+  --color-text: 0 0 0;
   --color-text-muted: 75 85 99; /* gray-600 */
   --color-bg: 255, 255, 255;
-  --color-bg-muted: 82 70 166;
+  --color-bg-muted: 200, 20, 236;
   --color-border: 68 33 134;
   
   --color-surface: 255 255 255;
@@ -58,8 +58,8 @@
   
   --color-text: 255 255 255;
   --color-text-muted: 156 163 175; /* gray-400 */
-  --color-bg: 5, 29, 77;
-  --color-bg-muted: 82 70 166;
+  --color-bg: 0 0 0;
+  --color-bg-muted: 255 255 255;
   --color-border: 68 33 134;
   
   --color-surface: 31 41 55;
