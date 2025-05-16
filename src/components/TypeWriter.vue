@@ -30,7 +30,7 @@ onMounted(() => {
     strings: props.text,
     speed: props.speed,
     startDelay: props.delay,
-    cursor: false // Ocultamos el cursor para que coincida con tu diseño
+    cursor: false // Ocultamos el cursor para que coincida el diseño
   }).go()
 })
 </script>

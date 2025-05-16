@@ -12,6 +12,7 @@
     "@iconify/json": "^2.2.338",
     "@iconify/vue": "^5.0.0",
     "@tailwindcss/vite": "^4.1.6",
+    "gsap": "^3.13.0",
     "pinia": "^3.0.2",
     "tailwindcss": "^4.1.6",
     "tippy.js": "^6.3.7",

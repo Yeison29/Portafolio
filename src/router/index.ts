@@ -11,16 +11,16 @@ const routes = [
     children:[
       {
         path: '',
-        name: 'Welcome',
+        name: 'welcome',
         component: Welcome,
+      },
+      {
+        path: 'home',
+        name: 'home',
+        component: () => import('@/views/HomeView.vue'), // Lazy loading
       }
     ]
   },
-/*   {
-    path: '/about',
-    name: 'About',
-    component: () => import('../views/About.vue'), // Lazy loading
-  }, */
 ];
 
 const router = createRouter({

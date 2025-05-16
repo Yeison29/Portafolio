@@ -1,9 +1,7 @@
 <template>
   <div
     id="welcome"
-    class="text-3xl md:text-4xl font-extrabold text-center leading-8 md:leading-10"
   >
-    <Networks />
     <TypeWriter
       :key="`welcome-${refreshKey}`"
       :text="t('welcome')"
@@ -34,7 +32,6 @@ import { ref, watch } from "vue";
 import { useI18n } from "vue-i18n";
 import type { MessageSchema } from "@/interfaces/i18n";
 import { useLocaleStore } from "@/stores/localeStore";
-import Networks from "@/components/Networks.vue";
 import TypeWriter from "@/components/TypeWriter.vue";
 
 const localeStore = useLocaleStore();
@@ -52,6 +49,6 @@ watch(
 
 <style scoped>
 #welcome {
-  width: 100vw;
+  width: 100%;
 }
 </style>

@@ -38,12 +38,11 @@
         </span>
       </button>
     </nav>
-    <welcome-view />
+    <router-view />
   </div>
 </template>
 
 <script setup lang="ts">
-import WelcomeView from "@/views/WelcomeView.vue";
 import { useThemeStore } from "@/stores/themeStore";
 import { useLocaleStore } from "@/stores/localeStore";
 
