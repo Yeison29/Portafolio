@@ -9,6 +9,7 @@ import { onMounted, watchEffect } from 'vue';
 import { useThemeStore } from '@/stores/themeStore';
 import { useI18n } from 'vue-i18n';
 import { useLocaleStore } from '@/stores/localeStore';
+import { calculateScrollbarWidth } from '@/utils/scrollbar';
 
 const themeStore = useThemeStore();
 const { locale } = useI18n();
@@ -17,6 +18,7 @@ const langStore = useLocaleStore();
 onMounted(() => {
   themeStore.initTheme();
   langStore.initLang();
+  window.addEventListener('resize', calculateScrollbarWidth);
 });
 
 watchEffect(() => {
@@ -31,6 +33,8 @@ watchEffect(() => {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  transition: all 0.5s ease;
+  height: 100dvh;
+  width: auto;
 }
 </style>

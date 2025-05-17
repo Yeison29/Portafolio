@@ -56,8 +56,12 @@ const initVanta = () => {
     THREE: THREE,
     mouseControls: true,
     touchControls: true,
-    gyroControls: false,
-    backgroundAlpha: cssRGBToThreeColor(primaryColor),
+    gyroControls: true,
+    colorMode: "lerp",
+    backgroundAlpha: 1,
+    wingSpan: 1,
+    quantity: 3,
+    birdSize: 2,
     backgroundColor: cssRGBToThreeColor(bgColor),
     color1: cssRGBToThreeColor(primaryColor),
     color2: cssRGBToThreeColor(bgColorMuted),
@@ -87,7 +91,8 @@ onUnmounted(() => {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   z-index: -1;
+  overflow: hidden;
 }
 </style>
