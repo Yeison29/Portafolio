@@ -6,6 +6,7 @@ body {
   min-height: 100dvh;
   background-color: rgb(var(--color-bg));
   color: rgb(var(--color-text));
+  transition: all 0.3s ease-in;
 }
 
 p {

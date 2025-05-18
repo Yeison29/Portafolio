@@ -1,10 +1,13 @@
 <template>
   <div id="content-layout">
+    <Nav />
     <router-view />
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Nav from "@/components/nav.vue";
+</script>
 
 <style scoped>
 #content-layout {

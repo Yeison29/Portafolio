@@ -1,6 +1,5 @@
 <template>
     <div id="app-layout">
-        <vanta-background />
         <toggle-lang-theme />
         <router-view />
     </div>
@@ -8,7 +7,6 @@
 
 <script setup lang="ts">
 import toggleLangTheme from "@/components/toggleLangTheme.vue";
-import VantaBackground from "@/components/VantaBackground.vue";
 </script>
 
 <style scoped>

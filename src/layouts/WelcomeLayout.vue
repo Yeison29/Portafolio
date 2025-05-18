@@ -1,4 +1,5 @@
 <template>
+  <vanta-background/>
   <div
     ref="touchContainer"
     id="welcome-layout"
@@ -17,6 +18,7 @@
 import { ref, onMounted, onUnmounted } from "vue";
 import { useRouter } from "vue-router";
 import gsap from "gsap";
+import VantaBackground from "@/components/VantaBackground.vue";
 
 const router = useRouter();
 

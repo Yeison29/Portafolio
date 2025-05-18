@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Home",
+        "icon": "line-md:home-simple",
+        "nameRoute": "home"
+    },
+    {
+        "name": "About",
+        "icon": "line-md:account",
+        "nameRoute": "about"
+    },
+    {
+        "name": "Portafolio",
+        "icon": "line-md:briefcase",
+        "nameRoute": "portafolio"
+    },
+    {
+        "name": "Contact",
+        "icon": "line-md:phone",
+        "nameRoute": "contact"
+    }
+]
