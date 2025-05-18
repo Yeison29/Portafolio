@@ -38,7 +38,7 @@ const openInNewTab = (url: string): void => {
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  padding: 1rem;
+  padding-bottom: 1rem;
 }
 
 .button {

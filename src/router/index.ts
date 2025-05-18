@@ -1,25 +1,38 @@
 // src/router/index.js
-import { createRouter, createWebHistory } from 'vue-router';
-import WelcomeLayout from '@/layouts/WelcomeLayout.vue';
-import Welcome from '@/views/WelcomeView.vue';
+import { createRouter, createWebHistory } from "vue-router";
+import AppLayout from "@/layouts/AppLayout.vue";
 
 const routes = [
   {
-    path: '/',
-    name: 'WelcomeLayout',
-    component: WelcomeLayout,
-    children:[
+    path: "/",
+    name: "appLayout",
+    component: AppLayout,
+    children: [
       {
-        path: '',
-        name: 'welcome',
-        component: Welcome,
+        path: "",
+        name: "welcomeLayout",
+        component: () => import("@/layouts/WelcomeLayout.vue"), // Lazy loading
+        children: [
+          {
+            path: "",
+            name: "welcome",
+            component: () => import("@/views/WelcomeView.vue"), // Lazy loading
+          },
+        ],
       },
       {
-        path: 'home',
-        name: 'home',
-        component: () => import('@/views/HomeView.vue'), // Lazy loading
-      }
-    ]
+        path: "content",
+        name: "content",
+        component: () => import("@/layouts/ContentLayout.vue"), // Lazy loading
+        children: [
+          {
+            path: "",
+            name: "home",
+            component: () => import("@/views/HomeView.vue"), // Lazy loading
+          },
+        ],
+      },
+    ],
   },
 ];
 

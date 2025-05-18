@@ -1,16 +1,16 @@
 <template>
   <div
     id="welcome"
-    class="text-3xl md:text-4xl font-extrabold text-center leading-8 md:leading-10"
+    class="text-2xl md:text-3xl font-extrabold text-center leading-10 md:leading-10"
   >
     <!-- Contenido-->
     <div
-      class="apsolute transform-gpu w-[340px] h-[240px] md:w-[500px] md:h-[400px] flex flex-col items-center justify-center p-8 text-center z-20"
+      class="transform-gpu w-[340px] h-[240px] md:w-[500px] md:h-[400px] flex flex-col items-center justify-center p-8 text-center z-20"
       @mouseenter="isTouchDevice !== true ? (isHovered = true) : null"
       @mouseleave="isTouchDevice !== true ? (isHovered = false) : null"
     >
       <networks />
-      <hello-world />
+      <welcome />
     </div>
     <div class="absolute min-h-screen">
       <!-- Contenedor relativo para posicionamiento absoluto -->
@@ -36,13 +36,19 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, watch } from "vue";
+import { ref, computed, watch, onMounted } from "vue";
 import { useDeviceOrientation } from "@vueuse/core";
 import Networks from "@/components/Networks.vue";
-import HelloWorld from "@/components/Welcome.vue";
+import Welcome from "@/components/Welcome.vue";
+import { useDelayedShow } from "@/utils/delayedShow";
 
 const isHovered = ref(false);
+const delayedButton = useDelayedShow(3500);
 const orientation = useDeviceOrientation();
+
+onMounted(() => {
+  delayedButton.showAfterDelay();
+});
 
 const isTouchDevice = computed(() => {
   return (
@@ -51,7 +57,6 @@ const isTouchDevice = computed(() => {
     orientation.isSupported
   );
 });
-console.log(isTouchDevice.value, isHovered.value);
 
 watch(
   () => isHovered.value,

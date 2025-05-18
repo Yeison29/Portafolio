@@ -4,6 +4,7 @@ import App from './App.vue'
 import router from './router';
 import i18n from './i18n';
 import { Icon } from '@iconify/vue';
+import { delayShow } from '@/directives/delayShow.directive'
 
 import "@/assets/styles/global/base.css";
 import "@/assets/styles/global/theme.css";
@@ -16,5 +17,7 @@ app.use(router);
 app.use(i18n);
 
 app.component('Icon', Icon);
+
+app.directive('delay-show', delayShow)
 
 app.mount('#app');
