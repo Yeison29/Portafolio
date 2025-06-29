@@ -4,21 +4,21 @@
   >
     <TypeWriter
       :key="`welcome-${refreshKey}`"
-      :text="t('welcome')"
+      :texts="[t('welcome')]"
       :speed="90"
       class="block"
     />
     <h1>
       <TypeWriter
         :key="`welcome2-${refreshKey}`"
-        :text="`${t('welcome2')} `"
+        :texts="[` ${t('welcome2')} `]"
         :speed="90"
         :delay="1500"
         class="gradient-text"
       />
       <TypeWriter
         :key="`welcome3-${refreshKey}`"
-        :text="t('welcome3')"
+        :texts="[t('welcome3')]"
         :speed="90"
         :delay="2500"
         class="gradient-text"
